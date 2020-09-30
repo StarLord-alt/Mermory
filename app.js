@@ -113,9 +113,7 @@ let pred_index=-1;
     if(nbr_click===1){
         pred_item=GridGame[index];
     }else if(nbr_click===2){
-        console.log("nbr_click===2")
         if(pred_item.name===GridGame[index].name && pred_item.id !==GridGame[index].id){
-            console.log("pred_item.name===GridGame[idGridGame].name)")
             GridGame[pred_item.index].locked=1;
             GridGame[index].locked=1;
 
@@ -126,7 +124,6 @@ let pred_index=-1;
             refreshScore(score);
             DisplayBoard()
         }else{
-            console.log("else !==")
             DisplayBoard()
             if(GridGame[pred_item.index].locked!==1){
                 GridGame[pred_item.index].visible=0;
@@ -157,7 +154,6 @@ let pred_index=-1;
         grid.innerHTML=""
         for(let i=0;i<GridGame.length;i++){
             var card=document.createElement('img')
-            console.log(GridGame[i].visible)
             if(GridGame[i].visible===0){
 
                     card.setAttribute('src','images/blank.png')
@@ -217,6 +213,3 @@ let pred_index=-1;
         console.log(JSON.stringify(array, null,1)+"\n\n")
     }
     creatBoard()
-
-
- // });
